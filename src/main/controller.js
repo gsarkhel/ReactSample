@@ -1,11 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import '../css/index.css';
+import View from './view';
 
 export default class Controller extends React.Component {
-    render() {
-        return (
-            <div>Hello</div>
-        );
-    }
+  // constructor(props) {
+  //   super(props);
+  // }
+
+  render() {
+    return (
+      <div><View /></div>
+    );
+  }
 }
