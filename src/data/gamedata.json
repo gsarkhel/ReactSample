@@ -1,0 +1,461 @@
+{
+  "title": "Crossword!",
+  "crosswords": [
+    {
+      "across": [
+        {
+          "word": "harbinger",
+          "clue": "To herald the approach of",
+          "x": 2,
+          "y": 3,
+          "number": 1
+        },
+        {
+          "word": "empathy",
+          "clue": "Synonyms: sympathy, compassion",
+          "x": 5,
+          "y": 6,
+          "number": 4
+        },
+        {
+          "word": "gambol",
+          "clue": "To jump or skip about playfully",
+          "x": 2,
+          "y": 14,
+          "number": 6
+        },
+        {
+          "word": "lampoon",
+          "clue": "A malicious satire",
+          "x": 9,
+          "y": 11,
+          "number": 8
+        },
+        {
+          "word": "bane",
+          "clue": "Antonyms: blessing, comfort, solace",
+          "x": 13,
+          "y": 8,
+          "number": 10
+        }
+      ],
+      "down": [
+        {
+          "word": "ambivalent",
+          "clue": "Having opposite or conflicting feelings about someone or something",
+          "x": 3,
+          "y": 3,
+          "number": 2
+        },
+        {
+          "word": "bode",
+          "clue": "To indicate by signs",
+          "x": 5,
+          "y": 3,
+          "number": 3
+        },
+        {
+          "word": "mellifluous",
+          "clue": "Flowing sweetly or smoothly",
+          "x": 6,
+          "y": 6,
+          "number": 5
+        },
+        {
+          "word": "truckle",
+          "clue": "To yield or submit tamely or submissively ",
+          "x": 9,
+          "y": 6,
+          "number": 7
+        },
+        {
+          "word": "refractory",
+          "clue": "Hard or difficult to manage",
+          "x": 14,
+          "y": 4,
+          "number": 9
+        }
+      ]
+    },
+    {
+      "across": [
+        {
+          "word": "fervid",
+          "clue": "Burning with enthusiasm or zeal ",
+          "x": 2,
+          "y": 7,
+          "number": 2
+        },
+        {
+          "word": "lagniappe",
+          "clue": "An extra or unexpected gift or gratuity",
+          "x": 6,
+          "y": 3,
+          "number": 4
+        },
+        {
+          "word": "imbue",
+          "clue": "To soak or stain thoroughly",
+          "x": 7,
+          "y": 6,
+          "number": 5
+        },
+        {
+          "word": "lackluster",
+          "clue": "Lacking brilliance or vitality",
+          "x": 2,
+          "y": 10,
+          "number": 7
+        },
+        {
+          "word": "opt",
+          "clue": "To make a choice or decision",
+          "x": 11,
+          "y": 11,
+          "number": 10
+        }
+      ],
+      "down": [
+        {
+          "word": "bane",
+          "clue": "Antonyms: blessing, comfort, solace",
+          "x": 3,
+          "y": 4,
+          "number": 1
+        },
+        {
+          "word": "fastidious",
+          "clue": "Overly demanding or hard to please",
+          "x": 7,
+          "y": 2,
+          "number": 3
+        },
+        {
+          "word": "pander",
+          "clue": "Synonym: indulge",
+          "x": 13,
+          "y": 3,
+          "number": 6
+        },
+        {
+          "word": "kudos",
+          "clue": "Synonyms: glory, praise, accolades",
+          "x": 5,
+          "y": 10,
+          "number": 8
+        },
+        {
+          "word": "prolix",
+          "clue": "Long-winded and wordy",
+          "x": 11,
+          "y": 9,
+          "number": 9
+        }
+      ]
+    },
+    {
+      "across": [
+        {
+          "word": "bode",
+          "clue": "To indicate by signs",
+          "x": 2,
+          "y": 7,
+          "number": 1
+        },
+        {
+          "word": "gargantuan",
+          "clue": "Of immense size, volume, or capacity",
+          "x": 4,
+          "y": 5,
+          "number": 4
+        },
+        {
+          "word": "lampoon",
+          "clue": "A malicious satire",
+          "x": 6,
+          "y": 8,
+          "number": 7
+        },
+        {
+          "word": "refractory",
+          "clue": "Hard or difficult to manage",
+          "x": 6,
+          "y": 11,
+          "number": 8
+        },
+        {
+          "word": "fervid",
+          "clue": "Burning with enthusiasm or zeal ",
+          "x": 5,
+          "y": 13,
+          "number": 10
+        }
+      ],
+      "down": [
+        {
+          "word": "opt",
+          "clue": "To make a choice or decision",
+          "x": 3,
+          "y": 7,
+          "number": 2
+        },
+        {
+          "word": "bane",
+          "clue": "Antonyms: blessing, comfort, solace",
+          "x": 5,
+          "y": 4,
+          "number": 3
+        },
+        {
+          "word": "lagniappe",
+          "clue": "An extra or unexpected gift or gratuity",
+          "x": 7,
+          "y": 3,
+          "number": 5
+        },
+        {
+          "word": "imbue",
+          "clue": "To soak or stain thoroughly",
+          "x": 11,
+          "y": 2,
+          "number": 6
+        },
+        {
+          "word": "pander",
+          "clue": "Synonym: indulge",
+          "x": 10,
+          "y": 10,
+          "number": 9
+        }
+      ]
+    },
+    {
+      "across": [
+        {
+          "word": "ambivalent",
+          "clue": "Having opposite or conflicting feelings about someone or something",
+          "x": 4,
+          "y": 4,
+          "number": 2
+        },
+        {
+          "word": "prolix",
+          "clue": "Long-winded and wordy",
+          "x": 2,
+          "y": 10,
+          "number": 4
+        },
+        {
+          "word": "gambol",
+          "clue": "To jump or skip about playfully",
+          "x": 15,
+          "y": 5,
+          "number": 9
+        },
+        {
+          "word": "lackluster",
+          "clue": "Lacking brilliance or vitality",
+          "x": 10,
+          "y": 8,
+          "number": 10
+        }
+      ],
+      "down": [
+        {
+          "word": "fastidious",
+          "clue": "Overly demanding or hard to please",
+          "x": 4,
+          "y": 3,
+          "number": 1
+        },
+        {
+          "word": "mellifluous",
+          "clue": "Flowing sweetly or smoothly",
+          "x": 10,
+          "y": 2,
+          "number": 3
+        },
+        {
+          "word": "harbinger",
+          "clue": "To herald the approach of",
+          "x": 6,
+          "y": 6,
+          "number": 5
+        },
+        {
+          "word": "truckle",
+          "clue": "To yield or submit tamely or submissively ",
+          "x": 13,
+          "y": 4,
+          "number": 6
+        },
+        {
+          "word": "kudos",
+          "clue": "Synonyms: glory, praise, accolades",
+          "x": 15,
+          "y": 7,
+          "number": 7
+        },
+        {
+          "word": "empathy",
+          "clue": "Synonyms: sympathy, compassion",
+          "x": 17,
+          "y": 4,
+          "number": 8
+        }
+      ]
+    },
+    {
+      "across": [
+        {
+          "word": "lackluster",
+          "clue": "Lacking brilliance or vitality",
+          "x": 1,
+          "y": 5,
+          "number": 1
+        },
+        {
+          "word": "opt",
+          "clue": "To make a choice or decision",
+          "x": 4,
+          "y": 8,
+          "number": 4
+        },
+        {
+          "word": "truckle",
+          "clue": "To yield or submit tamely or submissively ",
+          "x": 10,
+          "y": 9,
+          "number": 6
+        },
+        {
+          "word": "bane",
+          "clue": "Antonyms: blessing, comfort, solace",
+          "x": 15,
+          "y": 12,
+          "number": 9
+        }
+      ],
+      "down": [
+        {
+          "word": "harbinger",
+          "clue": "To herald the approach of",
+          "x": 2,
+          "y": 4,
+          "number": 2
+        },
+        {
+          "word": "kudos",
+          "clue": "Synonyms: glory, praise, accolades",
+          "x": 4,
+          "y": 5,
+          "number": 3
+        },
+        {
+          "word": "gargantuan",
+          "clue": "Of immense size, volume, or capacity",
+          "x": 10,
+          "y": 3,
+          "number": 5
+        },
+        {
+          "word": "imbue",
+          "clue": "To soak or stain thoroughly",
+          "x": 12,
+          "y": 6,
+          "number": 7
+        },
+        {
+          "word": "empathy",
+          "clue": "Synonyms: sympathy, compassion",
+          "x": 16,
+          "y": 9,
+          "number": 8
+        },
+        {
+          "word": "bode",
+          "clue": "To indicate by signs",
+          "x": 18,
+          "y": 9,
+          "number": 10
+        }
+      ]
+    },
+    {
+      "across": [
+        {
+          "word": "mellifluous",
+          "clue": "Flowing sweetly or smoothly",
+          "x": 5,
+          "y": 2,
+          "number": 1
+        },
+        {
+          "word": "fastidious",
+          "clue": "Overly demanding or hard to please",
+          "x": 5,
+          "y": 7,
+          "number": 3
+        },
+        {
+          "word": "lagniappe",
+          "clue": "An extra or unexpected gift or gratuity",
+          "x": 2,
+          "y": 10,
+          "number": 4
+        },
+        {
+          "word": "refractory",
+          "clue": "Hard or difficult to manage",
+          "x": 5,
+          "y": 14,
+          "number": 6
+        },
+        {
+          "word": "lampoon",
+          "clue": "A malicious satire",
+          "x": 13,
+          "y": 16,
+          "number": 8
+        }
+      ],
+      "down": [
+        {
+          "word": "fervid",
+          "clue": "Burning with enthusiasm or zeal ",
+          "x": 10,
+          "y": 2,
+          "number": 2
+        },
+        {
+          "word": "ambivalent",
+          "clue": "Having opposite or conflicting feelings about someone or something",
+          "x": 6,
+          "y": 7,
+          "number": 5
+        },
+        {
+          "word": "prolix",
+          "clue": "Long-winded and wordy",
+          "x": 13,
+          "y": 13,
+          "number": 7
+        },
+        {
+          "word": "gambol",
+          "clue": "To jump or skip about playfully",
+          "x": 17,
+          "y": 12,
+          "number": 9
+        },
+        {
+          "word": "pander",
+          "clue": "Synonym: indulge",
+          "x": 19,
+          "y": 14,
+          "number": 10
+        }
+      ]
+    }
+  ]
+}
