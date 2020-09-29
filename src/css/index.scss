@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.crossword {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4fdd0;
+
+    .GridWrapper {
+        width: 500px;
+        height: 500px;
+    }
+
+    .ClueWrapper {
+        width: 500px;
+        height: 500px;
+    }
+}
