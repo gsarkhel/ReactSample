@@ -24,9 +24,9 @@ export default class GridWrapper extends React.Component {
   }
 
   render() {
-    const boxes = this.getGrids();
     return (
-      <div className='GridWrapper'>{boxes}</div>
+      // <div className='GridWrapper'>{this.getGrids()}</div>
+      <div className='GridWrapper'>Hello</div>
     );
   }
 }

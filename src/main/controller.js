@@ -1,10 +1,12 @@
 import React from 'react';
 import View from './view';
-import GameData from '../data/gamedata.json';
+import gameData from '../data/gamedata.json';
+import GameLogic from './gamelogic'
 
 export default class Controller extends React.Component {
   constructor(props) {
     super(props);
+    this.gameLogic = new GameLogic({ gameData });
     this.state = {
       currentGame: {}
     }
@@ -16,7 +18,7 @@ export default class Controller extends React.Component {
 
   setGame() {
     this.setState({
-      currentGame: GameData.crosswords[0]
+      currentGame: this.gameLogic.setGame()
     });
   }
 
