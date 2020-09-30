@@ -1,17 +1,19 @@
 export default class GameLogic {
     constructor(props) {
         this.gameData = props.gameData;
+        this.gameArray = [];
     }
 
     setGame() {
         this.manageGameData();
-        return this.gameData.crosswords[0];
+        return this.gameArray;
     }
 
     manageGameData() {
         this.gameArray = [];
         const obj = this.gameData.crosswords[0];
 
+        const dimen = 25;
         let pushObj = {};
         obj.across.forEach((item, i) => {
             pushObj = {};
@@ -21,10 +23,12 @@ export default class GameLogic {
             const type = 'across';
             pushObj.type = type;
             pushObj.completed = false;
+            pushObj.dimen = dimen;
             pushObj.wordSeq = this.breakWords({
                 word: pushObj.word,
                 x: pushObj.x,
                 y: pushObj.y,
+                dimen,
                 type
             });
             this.gameArray.push(pushObj);
@@ -38,10 +42,12 @@ export default class GameLogic {
             const type = 'down';
             pushObj.type = type;
             pushObj.completed = false;
+            pushObj.dimen = dimen;
             pushObj.wordSeq = this.breakWords({
                 word: pushObj.word,
                 x: pushObj.x,
                 y: pushObj.y,
+                dimen,
                 type
             });
             this.gameArray.push(pushObj);
@@ -52,7 +58,20 @@ export default class GameLogic {
 
     breakWords(props) {
         let arr = props.word.split('');
-        arr = arr.map((i, j) => ({ key: i, correct: false, x: this.getIncrmentedValue(props, j, 'x'), y: this.getIncrmentedValue(props, j, 'y') }));
+        arr = arr.map((item, index) => {
+            const obj = {
+                key: item,
+                correct: false,
+                x: this.getIncrmentedValue(props, index, 'x'),
+                y: this.getIncrmentedValue(props, index, 'y')
+            };
+            obj.dimen = props.dimen;
+            obj.left = obj.x * props.dimen;
+            obj.top = obj.y * props.dimen;
+            obj.width = props.dimen + 1;
+            obj.height = props.dimen + 1;
+            return obj;
+        });
         return arr;
     }
 

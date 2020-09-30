@@ -13,20 +13,26 @@ export default class GridWrapper extends React.Component {
     return { currentGame: props.currentGame };
   }
 
-  getGrids() {
+  createGrids() {
     const boxes = [];
-    if (typeof (this.state.currentGame.across) !== 'undefined') {
-      this.state.currentGame.across.forEach(() => {
-        boxes.push(<GridBox />);
-      });
-    }
+    let id = 0;
+
+    this.state.currentGame.forEach(item => {
+      if (typeof (item.wordSeq) !== 'undefined') {
+        item.wordSeq.forEach(wSeq => {
+          boxes.push(<GridBox id={id} wSeq={wSeq} />);
+          id++;
+        });
+      }
+    });
+
     return boxes;
   }
 
   render() {
     return (
-      // <div className='GridWrapper'>{this.getGrids()}</div>
-      <div className='GridWrapper'>Hello</div>
+      <div className='GridWrapper'>{this.createGrids()}</div>
+      // <div className='GridWrapper'>Hello</div>
     );
   }
 }
