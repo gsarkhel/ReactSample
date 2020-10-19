@@ -4,21 +4,18 @@ import ClueItem from './clueitem'
 export default class ClueWrapper extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentGame: this.props.currentGame
-    }
+    this.clickEvent = this.clickEvent.bind(this);
   }
 
-  static getDerivedStateFromProps(props, state) {
-    console.log(props.currentGame);
-    return { currentGame: props.currentGame };
+  clickEvent(e) {
+    console.log('onClick Clue', e);
   }
 
   createClues() {
     const clues = [];
     let id = 0;
 
-    this.state.currentGame.forEach(item => {
+    this.props.currentGame.forEach(item => {
       if (typeof (item.clue) !== 'undefined') {
         clues.push(<ClueItem key={id} id={id} clue={item.clue} onClick={this.clickEvent} />);
         id++;

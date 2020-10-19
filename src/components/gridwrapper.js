@@ -4,21 +4,14 @@ import GridBox from './gridbox'
 export default class GridWrapper extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentGame: this.props.currentGame
-    }
     this.clickEvent = this.clickEvent.bind(this);
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    return { currentGame: props.currentGame };
   }
 
   createGrids() {
     const boxes = [];
     let id = 0;
 
-    this.state.currentGame.forEach(item => {
+    this.props.currentGame.forEach(item => {
       if (typeof (item.wordSeq) !== 'undefined') {
         item.wordSeq.forEach(wSeq => {
           boxes.push(<GridBox key={id} id={id} wSeq={wSeq} onClick={this.clickEvent}/>);
@@ -31,7 +24,7 @@ export default class GridWrapper extends React.Component {
   }
 
   clickEvent(e) {
-    console.log('onClick', e);
+    console.log('onClick Grid', e);
   }
 
   render() {

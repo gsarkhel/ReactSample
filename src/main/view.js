@@ -6,7 +6,10 @@ import '../css/index.scss';
 export default class View extends React.Component {
     render() {
         return (
-            <div className='crossword'><GridWrapper currentGame={this.props.currentGame} /><ClueWrapper currentGame={this.props.currentGame} /></div>
+            <div className='crossword'>
+                <GridWrapper currentGame={this.props.currentGame} />
+                <ClueWrapper currentGame={this.props.currentGame} />
+            </div>
         );
     }
 }
