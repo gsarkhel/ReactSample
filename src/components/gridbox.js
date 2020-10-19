@@ -8,7 +8,7 @@ export default class GridBox extends React.Component {
         top: `${this.props.wSeq.top}px`,
         width: `${this.props.wSeq.width}px`,
         height: `${this.props.wSeq.height}px`,
-      }} onClick={(e) => { this.props.onClick(e) }}>{this.props.wSeq.key}</div>
+      }} onClick={(e) => { this.props.onClick(this.props) }}>{this.props.wSeq.key}</div>
     );
   }
 }

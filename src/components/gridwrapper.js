@@ -11,12 +11,28 @@ export default class GridWrapper extends React.Component {
     const boxes = [];
     let id = 0;
 
-    this.props.currentGame.forEach(item => {
+    this.props.currentGame.forEach((item, index) => {
       if (typeof (item.wordSeq) !== 'undefined') {
         item.wordSeq.forEach(wSeq => {
-          boxes.push(<GridBox key={id} id={id} wSeq={wSeq} onClick={this.clickEvent}/>);
+          let alreadyCreated = null;
+          boxes.forEach(box => {
+            if (box.props.wSeq.x === wSeq.x && box.props.wSeq.y === wSeq.y) {
+              alreadyCreated = box;
+              box.props.dIndex = index;
+              // console.log(box.props.index);
+            }
+          });
+          if (alreadyCreated === null) {
+            if (item.type === 'across') {
+              wSeq.ref = <GridBox key={id} aIndex={index} dIndex={null} wSeq={wSeq} onClick={this.clickEvent} />;
+            } else {
+              wSeq.ref = <GridBox key={id} aIndex={null} dIndex={index} wSeq={wSeq} onClick={this.clickEvent} />;
+            }
+          }
+          boxes.push(wSeq.ref);
           id++;
         });
+        console.log('=================');
       }
     });
 
@@ -30,7 +46,6 @@ export default class GridWrapper extends React.Component {
   render() {
     return (
       <div className='GridWrapper'>{this.createGrids()}</div>
-      // <div className='GridWrapper'>Hello</div>
     );
   }
 }
