@@ -7,6 +7,7 @@ export default class GridWrapper extends React.Component {
     this.state = {
       currentGame: this.props.currentGame
     }
+    this.clickEvent = this.clickEvent.bind(this);
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -20,13 +21,17 @@ export default class GridWrapper extends React.Component {
     this.state.currentGame.forEach(item => {
       if (typeof (item.wordSeq) !== 'undefined') {
         item.wordSeq.forEach(wSeq => {
-          boxes.push(<GridBox id={id} wSeq={wSeq} />);
+          boxes.push(<GridBox key={id} id={id} wSeq={wSeq} onClick={this.clickEvent}/>);
           id++;
         });
       }
     });
 
     return boxes;
+  }
+
+  clickEvent(e) {
+    console.log('onClick', e);
   }
 
   render() {

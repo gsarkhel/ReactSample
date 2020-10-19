@@ -7,6 +7,7 @@ body {
 
 .crossword {
     position: absolute;
+    display: table;
     left: 0;
     top: 0;
     width: 100%;
@@ -14,6 +15,7 @@ body {
     background-color: #f4fdd0;
 
     .GridWrapper {
+        display: table-cell;
         width: 500px;
         height: 500px;
 
@@ -30,7 +32,12 @@ body {
     }
 
     .ClueWrapper {
-        width: 500px;
-        height: 500px;
+        display: table-cell;
+
+        .ClueHold {
+            .ClueItem {
+                font-size: 18px;
+            }
+        }
     }
 }
