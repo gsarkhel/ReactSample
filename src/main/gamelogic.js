@@ -1,16 +1,19 @@
 export default class GameLogic {
     constructor(props) {
         this.gameData = props.gameData;
-        this.gameArray = [];
+        this.gameObj = {};
     }
 
-    setGame() {
+    getGame() {
         this.manageGameData();
-        return this.gameArray;
+        return this.gameObj;
     }
 
     manageGameData() {
-        this.gameArray = [];
+        this.gameObj = {
+            gameArray: [],
+            gameBoxes: {}
+        };
         const obj = this.gameData.crosswords[0];
 
         const dimen = 25;
@@ -28,10 +31,12 @@ export default class GameLogic {
                 word: pushObj.word,
                 x: pushObj.x,
                 y: pushObj.y,
+                i,
                 dimen,
-                type
+                type,
+                gameBoxes: this.gameObj.gameBoxes
             });
-            this.gameArray.push(pushObj);
+            this.gameObj.gameArray.push(pushObj);
         });
 
         obj.down.forEach((item, i) => {
@@ -47,13 +52,15 @@ export default class GameLogic {
                 word: pushObj.word,
                 x: pushObj.x,
                 y: pushObj.y,
+                i,
                 dimen,
-                type
+                type,
+                gameBoxes: this.gameObj.gameBoxes
             });
-            this.gameArray.push(pushObj);
+            this.gameObj.gameArray.push(pushObj);
         });
 
-        console.log(this.gameArray);
+        console.log(this.gameObj);
     }
 
     breakWords(props) {
@@ -70,6 +77,15 @@ export default class GameLogic {
             obj.top = obj.y * props.dimen;
             obj.width = props.dimen + 1;
             obj.height = props.dimen + 1;
+
+            if (typeof (props.gameBoxes[`${obj.x}|${obj.y}`]) === 'undefined') {
+                props.gameBoxes[`${obj.x}|${obj.y}`] = {};
+                props.gameBoxes[`${obj.x}|${obj.y}`].ref = [];
+            }
+            props.gameBoxes[`${obj.x}|${obj.y}`].ref.push({
+                clue: props.i,
+                char: index
+            });
             return obj;
         });
         return arr;

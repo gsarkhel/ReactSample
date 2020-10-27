@@ -8,7 +8,8 @@ export default class Controller extends React.Component {
     super(props);
     this.gameLogic = new GameLogic({ gameData });
     this.state = {
-      currentGame: []
+      gameArray: [],
+      gameBoxes: []
     }
   }
 
@@ -17,14 +18,16 @@ export default class Controller extends React.Component {
   }
 
   setGame() {
+    const gameObj = this.gameLogic.getGame();
     this.setState({
-      currentGame: this.gameLogic.setGame()
+      gameArray: gameObj.gameArray,
+      gameBoxes: gameObj.gameBoxes
     });
   }
 
   render() {
     return (
-      <View currentGame={this.state.currentGame} />
+      <View gameArray={this.state.gameArray} gameBoxes={this.state.gameBoxes} />
     );
   }
 }
