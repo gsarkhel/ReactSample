@@ -14,8 +14,7 @@ export default class ClueWrapper extends React.Component {
   createClues() {
     const clues = [];
     let id = 0;
-
-    this.props.gameArray.forEach(item => {
+    this.props.gameObj.gameArray.forEach(item => {
       if (typeof (item.clue) !== 'undefined') {
         clues.push(<ClueItem key={id} id={id} clue={item.clue} onClick={this.clickEvent} />);
         id++;

@@ -11,29 +11,20 @@ export default class GridWrapper extends React.Component {
     const boxes = [];
     let id = 0;
 
-    Object.keys(this.props.gameBoxes).forEach((item, index) => {
-      console.log(item);
-      if (typeof (item.wordSeq) !== 'undefined') {
-        item.wordSeq.forEach(wSeq => {
-          let alreadyCreated = null;
-          // boxes.forEach(box => {
-          //   if (box.props.wSeq.x === wSeq.x && box.props.wSeq.y === wSeq.y) {
-          //     alreadyCreated = box;
-          //     box.props.dIndex = index;
-          //     // console.log(box.props.index);
-          //   }
-          // });
-          if (alreadyCreated === null) {
-            if (item.type === 'across') {
-              wSeq.ref = <GridBox key={id} aIndex={index} dIndex={null} wSeq={wSeq} onClick={this.clickEvent} />;
-            } else {
-              wSeq.ref = <GridBox key={id} aIndex={null} dIndex={index} wSeq={wSeq} onClick={this.clickEvent} />;
-            }
-          }
-          boxes.push(wSeq.ref);
+    if (typeof (this.props.gameObj.maxX) !== 'undefined') {
+      console.log(this.props.gameObj);
+      for (let xi = 1; xi <= this.props.gameObj.maxX + this.props.gameObj.offsetX; xi++) {
+        for (let yi = 1; yi <= this.props.gameObj.maxY + this.props.gameObj.offsetY; yi++) {
+          // console.log(xi, yi);
+          boxes.push(<GridBox key={id} pos={{ x:xi, y:yi }} onClick={this.clickEvent} />);
           id++;
-        });
+        }
       }
+    }
+
+    const refObj = {};
+    this.props.gameObj.gameArray.forEach(item => {
+      console.log(item);
     });
 
     return boxes;

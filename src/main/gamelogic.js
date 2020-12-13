@@ -12,11 +12,13 @@ export default class GameLogic {
     manageGameData() {
         this.gameObj = {
             gameArray: [],
-            gameBoxes: {}
+            maxX: 0,
+            maxY: 0,
+            offsetX: 1000,
+            offsetY: 1000
         };
         const obj = this.gameData.crosswords[0];
 
-        const dimen = 25;
         let pushObj = {};
         obj.across.forEach((item, i) => {
             pushObj = {};
@@ -26,17 +28,14 @@ export default class GameLogic {
             const type = 'across';
             pushObj.type = type;
             pushObj.completed = false;
-            pushObj.dimen = dimen;
             pushObj.wordSeq = this.breakWords({
                 word: pushObj.word,
                 x: pushObj.x,
                 y: pushObj.y,
-                i,
-                dimen,
-                type,
-                gameBoxes: this.gameObj.gameBoxes
+                type
             });
             this.gameObj.gameArray.push(pushObj);
+            this.maxXYPosition(pushObj.x, pushObj.y);
         });
 
         obj.down.forEach((item, i) => {
@@ -47,20 +46,17 @@ export default class GameLogic {
             const type = 'down';
             pushObj.type = type;
             pushObj.completed = false;
-            pushObj.dimen = dimen;
             pushObj.wordSeq = this.breakWords({
                 word: pushObj.word,
                 x: pushObj.x,
                 y: pushObj.y,
-                i,
-                dimen,
-                type,
-                gameBoxes: this.gameObj.gameBoxes
+                type
             });
             this.gameObj.gameArray.push(pushObj);
+            this.maxXYPosition(pushObj.x, pushObj.y);
         });
 
-        console.log(this.gameObj);
+        // console.log(this.gameObj);
     }
 
     breakWords(props) {
@@ -72,23 +68,27 @@ export default class GameLogic {
                 x: this.getIncrmentedValue(props, index, 'x'),
                 y: this.getIncrmentedValue(props, index, 'y')
             };
-            obj.dimen = props.dimen;
-            obj.left = obj.x * props.dimen;
-            obj.top = obj.y * props.dimen;
-            obj.width = props.dimen + 1;
-            obj.height = props.dimen + 1;
-
-            if (typeof (props.gameBoxes[`${obj.x}|${obj.y}`]) === 'undefined') {
-                props.gameBoxes[`${obj.x}|${obj.y}`] = {};
-                props.gameBoxes[`${obj.x}|${obj.y}`].ref = [];
-            }
-            props.gameBoxes[`${obj.x}|${obj.y}`].ref.push({
-                clue: props.i,
-                char: index
-            });
             return obj;
         });
         return arr;
+    }
+
+    maxXYPosition(x, y) {
+        if (this.gameObj.offsetX > x) {
+            this.gameObj.offsetX = x;
+        }
+        
+        if (this.gameObj.offsetY > y) {
+            this.gameObj.offsetY = y;
+        }
+
+        if (this.gameObj.maxX < x) {
+            this.gameObj.maxX = x;
+        }
+        
+        if (this.gameObj.maxY < y) {
+            this.gameObj.maxY = y;
+        }
     }
 
     getIncrmentedValue(props, num, varb) {

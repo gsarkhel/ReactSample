@@ -7,8 +7,8 @@ export default class View extends React.Component {
     render() {
         return (
             <div className='crossword'>
-                <GridWrapper gameBoxes={this.props.gameBoxes} />
-                <ClueWrapper gameArray={this.props.gameArray} />
+                <GridWrapper gameObj={this.props.gameObj} />
+                <ClueWrapper gameObj={this.props.gameObj} />
             </div>
         );
     }
