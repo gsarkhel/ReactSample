@@ -12,10 +12,12 @@ export default class GameLogic {
     manageGameData() {
         this.gameObj = {
             gameArray: [],
+            boxObj: {},
             maxX: 0,
             maxY: 0,
             offsetX: 1000,
-            offsetY: 1000
+            offsetY: 1000,
+            selected: null
         };
         const obj = this.gameData.crosswords[0];
 
@@ -35,7 +37,6 @@ export default class GameLogic {
                 type
             });
             this.gameObj.gameArray.push(pushObj);
-            this.maxXYPosition(pushObj.x, pushObj.y);
         });
 
         obj.down.forEach((item, i) => {
@@ -53,7 +54,6 @@ export default class GameLogic {
                 type
             });
             this.gameObj.gameArray.push(pushObj);
-            this.maxXYPosition(pushObj.x, pushObj.y);
         });
 
         // console.log(this.gameObj);
@@ -62,12 +62,24 @@ export default class GameLogic {
     breakWords(props) {
         let arr = props.word.split('');
         arr = arr.map((item, index) => {
+            const xPos = this.getIncrmentedValue(props, index, 'x');
+            const yPos = this.getIncrmentedValue(props, index, 'y');
             const obj = {
                 key: item,
                 correct: false,
-                x: this.getIncrmentedValue(props, index, 'x'),
-                y: this.getIncrmentedValue(props, index, 'y')
+                x: xPos,
+                y: yPos
             };
+            this.maxXYPosition(xPos, yPos);
+            if (typeof (this.gameObj.boxObj[`${obj.x}_${obj.y}`]) === 'undefined') {
+                this.gameObj.boxObj[`${obj.x}_${obj.y}`] = [];
+            }
+            this.gameObj.boxObj[`${obj.x}_${obj.y}`].push({
+                item,
+                mainIndex: this.gameObj.gameArray.length,
+                subIndex: index
+            });
+            // console.log(obj.x, obj.y, this.gameObj.boxObj[`${obj.x}_${obj.y}`]);
             return obj;
         });
         return arr;
@@ -77,7 +89,7 @@ export default class GameLogic {
         if (this.gameObj.offsetX > x) {
             this.gameObj.offsetX = x;
         }
-        
+
         if (this.gameObj.offsetY > y) {
             this.gameObj.offsetY = y;
         }
@@ -85,7 +97,7 @@ export default class GameLogic {
         if (this.gameObj.maxX < x) {
             this.gameObj.maxX = x;
         }
-        
+
         if (this.gameObj.maxY < y) {
             this.gameObj.maxY = y;
         }

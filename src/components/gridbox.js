@@ -5,22 +5,31 @@ export default class GridBox extends React.Component {
     super(props);
     this.dimen = 25;
   }
+
+  onClickFn(props) {
+    // console.log(props);
+    if (typeof (props.linkData) !== 'undefined') {
+      props.onClick(props);
+    }
+  }
+
   render() {
     const left = `${(this.props.pos.x - 1) * this.dimen}px`;
     const top = `${(this.props.pos.y - 1) * this.dimen}px`;
+    // console.log(this.props.linkData);
+    // let text = '';
+    let classStr = '';
+    if (typeof (this.props.linkData) !== 'undefined') {
+      // text = this.props.linkData[0].item;
+      classStr = 'show';
+    }
     return (
-      <div id={this.props.id} className='GridBox' style={{
+      <div id={this.props.id} className={`GridBox ${classStr}`} style={{
         left,
         top,
         width: `${this.dimen}px`,
         height: `${this.dimen}px`,
-      }} onClick={(e) => { this.props.onClick(this.props) }} />
-      // <div id={this.props.id} className='GridBox' style={{
-      //   left: `${this.props.wSeq.left}px`,
-      //   top: `${this.props.wSeq.top}px`,
-      //   width: `${this.props.wSeq.width}px`,
-      //   height: `${this.props.wSeq.height}px`,
-      // }} onClick={(e) => { this.props.onClick(this.props) }}>{this.props.wSeq.key}</div>
+      }} onClick={(e) => { this.onClickFn(this.props) }} />
     );
   }
 }

@@ -27,7 +27,19 @@ body {
             background-color: #ffffff;
             border: 1px solid #000000;
             box-sizing: border-box;
-            cursor: pointer;
+            visibility: hidden;
+
+            &.show {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                visibility: visible;
+            }
+
+            &.highlight {
+                background-color: #ffff00;
+            }
         }
     }
 

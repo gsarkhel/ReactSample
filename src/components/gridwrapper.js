@@ -12,20 +12,21 @@ export default class GridWrapper extends React.Component {
     let id = 0;
 
     if (typeof (this.props.gameObj.maxX) !== 'undefined') {
-      console.log(this.props.gameObj);
-      for (let xi = 1; xi <= this.props.gameObj.maxX + this.props.gameObj.offsetX; xi++) {
-        for (let yi = 1; yi <= this.props.gameObj.maxY + this.props.gameObj.offsetY; yi++) {
-          // console.log(xi, yi);
-          boxes.push(<GridBox key={id} pos={{ x:xi, y:yi }} onClick={this.clickEvent} />);
+      // console.log(this.props.gameObj.boxObj);
+      const mX = this.props.gameObj.maxX + this.props.gameObj.offsetX - 1;
+      const mY = this.props.gameObj.maxY + this.props.gameObj.offsetY - 1;
+      for (let xi = 1; xi <= mX; xi++) {
+        for (let yi = 1; yi <= mY; yi++) {
+          // console.log(xi, yi, this.props.gameObj.boxObj[`${xi}_${yi}`]);
+          if (typeof (this.props.gameObj.boxObj[`${xi}_${yi}`]) !== 'undefined') {
+            boxes.push(<GridBox key={id} pos={{ x: xi, y: yi }} linkData={this.props.gameObj.boxObj[`${xi}_${yi}`]} onClick={this.clickEvent} />);
+          } else {
+            boxes.push(<GridBox key={id} pos={{ x: xi, y: yi }} />);
+          }
           id++;
         }
       }
     }
-
-    const refObj = {};
-    this.props.gameObj.gameArray.forEach(item => {
-      console.log(item);
-    });
 
     return boxes;
   }
