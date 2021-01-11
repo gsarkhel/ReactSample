@@ -1,7 +1,11 @@
-export default class GameLogic {
+import React from 'react';
+import { connect } from "react-redux";
+
+class GameLogic extends React.Component {
     constructor(props) {
-        this.gameData = props.gameData;
-        this.gameObj = {};
+        super(props);
+        // this.gameData = props.gameData;
+        // this.gameObj = {};
     }
 
     getGame() {
@@ -112,4 +116,19 @@ export default class GameLogic {
         }
         return val;
     }
+
+    render() {
+        return (
+            <div />
+        );
+      }
 }
+
+const mapStateToProps = (state) => {
+    console.log('Logic', state);
+  return {
+    title: state.title
+  };
+}
+
+export default connect(mapStateToProps)(GameLogic);

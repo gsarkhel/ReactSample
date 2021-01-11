@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ClueItem from './clueitem'
 
-export default class ClueWrapper extends React.Component {
+class ClueWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.clickEvent = this.clickEvent.bind(this);
@@ -26,7 +27,28 @@ export default class ClueWrapper extends React.Component {
 
   render() {
     return (
-      <div className='ClueWrapper'><div className='ClueHold'>{this.createClues()}</div></div>
+      // <div className='ClueWrapper'><div className='ClueHold'>{this.createClues()}</div></div>
+      <div className='ClueWrapper'><div className='ClueHold'>{this.props.title}</div></div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  console.log('clue', state);
+  return {
+    title: state.title
+  };
+};
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     setTitle: (title) => {
+//       dispatch({
+//         type: 'SET_TITLE',
+//         payload: title
+//       })
+//     }
+//   };
+// };
+
+export default connect(mapStateToProps)(ClueWrapper);

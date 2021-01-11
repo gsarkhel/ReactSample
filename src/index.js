@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Controller from './main/controller';
+import { Provider } from 'react-redux';
+import store from './store';
+import App from './main/app';
 
 ReactDOM.render(
-  <Controller />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root'),
 );
